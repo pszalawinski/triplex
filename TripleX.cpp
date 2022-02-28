@@ -1,19 +1,17 @@
 #include <iostream>
 
-void PrintIntroduction(int LevelDifficulty)
+void PrintIntroduction()
 {
     std::cout << "\n\nHello! You are going to play the most annoying game in a minute...\n";
     std::cout << "Enter corect code to continue...\n";
-    std::cout << "LevelDifficulty is - " << LevelDifficulty;
-    std::cout << "\n There are 3 numbers in the code\n";
 }
+
 bool PlayGame(int LevelDifficulty)
 {
-
-    PrintIntroduction(LevelDifficulty);
+    std::cout << "\nLevelDifficulty is - " << LevelDifficulty;
 
     int LevelMultiplier = 3 * LevelDifficulty;
-
+    std::cout << "\n There are 3 numbers in the code\n";
     const int GuessA = 1 + rand() % LevelMultiplier;
     const int GuessB = 1 + rand() % LevelMultiplier;
     const int GuessC = 1 + rand() % LevelMultiplier;
@@ -40,8 +38,8 @@ bool PlayGame(int LevelDifficulty)
     else
     {
         std::cout << "\nYou LOST!\n";
-        std::cout << "sum is " << ExpectedSum;
-        std::cout << "multiply is " << ExpectedProduct;
+        std::cout << "\nsum is " << ExpectedSum;
+        std::cout << "\nmultiply is " << ExpectedProduct;
 
         return false;
     }
@@ -82,9 +80,10 @@ bool PlayGame(int LevelDifficulty)
 
 int main()
 {
+    PrintIntroduction();
 
     int LevelDifficulty = 1;
-    const int MaxLevel = 4;
+    const int MaxLevel = 3;
 
     while (LevelDifficulty <= MaxLevel)
     {
